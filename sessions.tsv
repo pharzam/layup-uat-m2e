@@ -1,3 +1,4 @@
 session	task	attempt	role	harness	version	model	base	records	prompt_bytes	prompt_tokens	context	cap	wall	vars	policy
 S-37ca8d77	T-ls4q	1	probe	claude	2.1.303 (Claude Code)	claude-sonnet-5-5	a57ea62d612440cd52a89b7ce8c84c90484a740b	a0f5cd42cc6214cc3411d247e366cd31d1c16084	453	114	1000000	5.00	30	ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-sonnet-5-5	—
 S-3ef60293	T-0wev	1	probe	devin	devin 3000.11.92 (7f4e64980e22)	swe-2-high	a57ea62d612440cd52a89b7ce8c84c90484a740b	cdf8d0b7e90a1ab0ea11ddc3b9877703c6e36ee0	453	114	262000	—	15	—	—
+S-817a1289	T-etqq	1	probe	codex	codex-cli 0.163.0	gpt-6.1-sol	a57ea62d612440cd52a89b7ce8c84c90484a740b	aa9a252244b15c66bff93125d7e9cf09588dee0f	453	114	1050000	—	30	—	—
