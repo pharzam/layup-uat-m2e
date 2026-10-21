@@ -1,3 +1,4 @@
 session	task	requirements	role	harness	model	billing	start	first_output	end	latency_s	duration_s	tokens_in	tokens_out	tokens_cache	tokens_status	tokens_reason	money	currency	money_status	price
 S-37ca8d77	T-ls4q	—	probe	claude	claude-sonnet-5-5	subscription	2026-10-21T18:09:34Z	2026-10-21T18:09:35Z	2026-10-21T18:09:47Z	1	13	4	323	41781	observed	—	—	—	unknown	—
 S-3ef60293	T-0wev	—	probe	devin	swe-2-high	subscription	2026-10-21T18:09:51Z	2026-10-21T18:09:55Z	2026-10-21T18:10:12Z	4	21	—	—	—	unavailable	the harness reports none	—	—	unknown	—
+S-817a1289	T-etqq	—	probe	codex	gpt-6.1-sol	subscription	2026-10-21T18:10:16Z	2026-10-21T18:10:30Z	2026-10-21T18:10:30Z	14	14	—	—	—	unavailable	the harness reports none	—	—	unknown	—
