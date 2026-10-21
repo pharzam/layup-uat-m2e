@@ -6,3 +6,4 @@ S-f8b32412	T-qyuu	1	systems-architect	claude	2.1.303 (Claude Code)	claude-opus-5
 S-00dd8fdc	T-624o	1	product-owner	claude	2.1.303 (Claude Code)	claude-opus-5-5	a57ea62d612440cd52a89b7ce8c84c90484a740b	4b105eef243c4699174c4495408ba54aa7c447ad	1096	274	1000000	5.00	30	ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-sonnet-5-5	—
 S-eaff21f0	T-y2sw	1	product-owner	claude	2.1.303 (Claude Code)	claude-opus-5-5	a57ea62d612440cd52a89b7ce8c84c90484a740b	2b7a93a5c2fe360bec42aee45e473d449ea57b17	1073	269	1000000	5.00	30	ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-sonnet-5-5	—
 S-4c675944	T-1tft	1	qa-engineer	codex	codex-cli 0.163.0	gpt-6.1-sol	a57ea62d612440cd52a89b7ce8c84c90484a740b	a9dd3e099aea5fdff88f00a8e326b2fac8fd9ab9	1149	288	1050000	—	30	—	—
+S-b653726e	T-d2iw	1	systems-architect	claude	2.1.303 (Claude Code)	claude-opus-5-5	a57ea62d612440cd52a89b7ce8c84c90484a740b	5b92a42462e37ca20d2b072bf114c5fb69ce49e6	1107	277	1000000	5.00	30	ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-sonnet-5-5	—
