@@ -64,7 +64,7 @@ fresh copy of the baseline (no PRDs yet). It is wired into the
 the shape of the PRD form, change the linter in the same change** — the two must
 agree. Its self-tests live in [`tests/`](tests/) (sample good and bad PRDs, not
 example content to complete). A project on a specific stack — Go, for `tally` — may instead port these
-checks to its `‹test runner›`.
+checks to its `go test`.
 
 ## Index
 

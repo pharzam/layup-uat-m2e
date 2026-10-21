@@ -61,7 +61,7 @@ is kept:
 **2. Set the `‹…›` markers.** These are the per-project values with no file
 of their own:
 
-- `‹test runner›` — how tests run for `tally`: the Go toolchain, `go test`, with no
+- `go test` — how tests run for `tally`: the Go toolchain, `go test`, with no
   test framework beyond the standard library; the per-level commands
   (`‹unit test command›`, `‹integration test command›`, …) are defined in
   [`tests/test-levels.md`](tests/test-levels.md).
@@ -737,7 +737,7 @@ shape allows it. It is the default way of working, not an afterthought bolted on
 once the code already "works". A bug fix's test must fail against the old code and
 pass against the fix — otherwise it is not proof that the bug is gone.
 
-Tests run through `‹test runner›`.
+Tests run through `go test`.
 
 The full testing conventions — the levels, a pattern to write each kind, the
 security, scaling, and Definition-of-Done (DoD) checklists, and the traceability
