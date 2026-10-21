@@ -1,22 +1,23 @@
 # Worked example — from a fact to a test
 
-One concrete walk down the kit's traceability line, so the abstract chain in
-[`traceability-template.md`](traceability-template.md) has a filled example beside
-it. It follows a single requirement from the customer's words all the way to the
-test that proves it, using only Armature conventions.
+One concrete walk down the traceability line of this repository, so the abstract
+chain in [`traceability-template.md`](traceability-template.md) has a complete
+example beside it. It follows a single requirement of `tally` from the customer's
+words all the way to the test that proves it, using only the conventions of the
+baseline.
 
-    fact (F-0001#1) → requirement (REQ-001) → guardrail → ADR → task (T-ab12) → test
+    fact (F-0001#2) → requirement (REQ-001) → guardrail → ADR → task (T-ab12) → test
 
 This example needs no architecturally-significant decision, so the **ADR** link is
 empty (`—`, as the [row at the end](#5-the-traceability-row-the-line-written-down)
-shows); every other link is filled.
+shows); every other link is complete.
 
-> **How to adapt this file.** This is an **illustrative** example — the "order"
-> domain below is a stand-in, not part of the kit. Replace it with one real line
-> from your own project once you have a fact and a requirement, or simply delete
-> this file. It names no test runner: the test's command stays the `‹unit test
-> command›` placeholder throughout. Delete this note if you keep and adapt the
-> file.
+> **How this file is used.** This is an **illustrative** example: the fact is a
+> real fact of `tally`, while the requirement ID, the task ID and the test name are
+> shapes that the first PRD and the first task will settle. It names no test
+> runner: the test's command stays the `‹unit test
+> command›` placeholder throughout. When the real requirement and test exist, this
+> page follows them.
 
 ## In plain terms
 
@@ -29,11 +30,14 @@ shows); every other link is filled.
 ## 1. The fact (Layer 1 — the customer's words)
 
 A [facts record](../facts/) stores the customer's words unchanged, numbered so a
-requirement can cite one line. In [`facts/F-0001-...`](../facts/):
+requirement can cite one line. In [`facts/F-0001-setup-answers.md`](../facts/F-0001-setup-answers.md):
 
-    1. The customer wants the system to reject an order that has no items.
+    2. `Q-001` A carriage return before a line feed is part of the line and is
+       counted as a character, like any other code point. A line feed alone ends
+       an empty line, which counts as one line. An empty file has zero lines,
+       zero words and zero characters. — by idea-owner; …
 
-This is `F-0001#1` — the first fact in facts document `F-0001`. It is immutable
+This is `F-0001#2` — the second fact in facts document `F-0001`. It is immutable
 evidence: it is not rewritten, only cited.
 
 ## 2. The requirement (Layer 2 — derived, and it cites the fact)
@@ -43,35 +47,35 @@ PRD's `§6` functional-requirements table:
 
     | REQ | Statement | MoSCoW | Phase | Facts |
     | --- | --------- | ------ | ----- | ----- |
-    | REQ-001 | The system rejects an order that has no items. | Must | 1 | F-0001#1 |
+    | REQ-001 | tally counts an empty line as one line and a carriage return as one character. | Must | 1 | F-0001#2 |
 
-`REQ-001` is a stable ID, assigned once. Because it cites `F-0001#1`, a reader can
+`REQ-001` is a stable ID, assigned once. Because it cites `F-0001#2`, a reader can
 always trace the requirement back to the customer's exact words —
 [`prd-lint.sh`](../prd/prd-lint.sh) checks that the cited fact resolves.
 
 ## 3. The guardrail (the known pitfall it inherits)
 
-An empty or malformed input slipping through is a classic trap, so it belongs in
-[`guardrails.md`](../guardrails.md) as a known pitfall:
+A counter that strips the carriage return, or that counts only the line feeds, is
+a known trap of counting text, so it is in [`guardrails.md`](../guardrails.md) §2
+as a known pitfall:
 
-    - ❌ An input that is empty or malformed is accepted instead of rejected.
+    - ❌ The last line without a line feed, and the carriage return.
 
-The requirement now carries that guardrail: the test must prove the empty order is
-*rejected*, not merely that a normal order is accepted.
+The requirement now carries that guardrail: the test must prove that `a␍⏎⏎` has
+two lines and four characters, not merely that `a⏎` has one line.
 
 ## 4. The test (strict TDD — red, then green)
 
-The requirement is proved at the [unit level](test-levels.md) — one component, in
-isolation — following the [`template-unit.md`](template-unit.md) pattern and the
-strict [red-then-green](../engineering-discipline.md#requirements-traceability)
-order:
+The requirement is proved at the [unit level](test-levels.md) — the package
+`count`, in isolation — following the [`template-unit.md`](template-unit.md)
+pattern and the strict
+[red-then-green](../engineering-discipline.md#requirements-traceability) order:
 
-1. **Red.** Write the test first: submit an order with zero items, assert it is
-   rejected with the expected error. Run `‹unit test command›`; watch it **fail**
-   against code that still accepts the empty order — failing for the *right*
-   reason.
-2. **Green.** Add the rejection rule, run `‹unit test command›` again, watch it
-   **pass**.
+1. **Red.** Write the test first: count the text `a\r\n\n`, assert two lines, one
+   word and four characters. Run `‹unit test command›`; watch it **fail** against
+   code that still drops the carriage return — failing for the *right* reason.
+2. **Green.** Count the carriage return as a character, run `‹unit test command›`
+   again, watch it **pass**.
 3. **Freeze.** Once a fresh context confirms it
    ([R9](../issue-workflow.md#r9--test-freeze-after-confirmation)), the test is
    frozen: not weakened later to make new code pass.
@@ -86,9 +90,9 @@ test:
 
     | Test ID | Level | Covers | Fact | Guardrail | ADR | Task | Status |
     |---------|-------|--------|------|-----------|-----|------|--------|
-    | reject-empty-order | unit | REQ-001 | F-0001#1 | guardrails.md §2 | — | T-ab12 | frozen |
+    | crlf-and-empty-line | unit | REQ-001 | F-0001#2 | guardrails.md §2 | — | T-ab12 | frozen |
 
-Read left to right, the row is the whole story: the customer said it (`F-0001#1`),
+Read left to right, the row is the whole story: the customer said it (`F-0001#2`),
 it became a requirement (`REQ-001`), it inherited a pitfall (`guardrails.md §2`), a
 task delivered it (`T-ab12`), and a frozen unit test proves it. A requirement with
 no such row is a requirement with no proof — which the

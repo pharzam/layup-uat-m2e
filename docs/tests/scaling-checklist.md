@@ -6,10 +6,11 @@ to mean a real bug. This file is the set of rules that keep a suite fast and
 stable as it grows, sitting alongside the [test levels](test-levels.md) — every
 rule below applies within a level and across all of them.
 
-> **How to adapt this file.** The rules are the reusable content — keep them.
-> Fill in `‹test timeout›` with your project's real number, and use the
-> checklist as a gate whenever you review or extend the suite. Delete this note
-> once you have done that.
+> **How this file is kept.** The rules are the reusable content — keep them.
+> Set `‹test timeout›` to the real number of `tally` (the `-timeout` of
+> `go test`), and use the checklist as a gate whenever you review or extend the
+> suite. The time and memory tests of the quality targets are the slow ones: they
+> run in CI, not in the hook.
 
 ## In plain terms
 

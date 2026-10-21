@@ -4,10 +4,10 @@ A unit test proves that **one component behaves correctly in isolation**, per
 the [unit level](test-levels.md#1-unit-tests). This is the pattern to copy for
 each new one.
 
-> **How to adapt this file.** Copy [the skeleton](#fill-in-skeleton) below for
-> every new unit test, replacing each `‹…›` with the real name, code, and
-> command. Keep the pattern's rules; delete this note once your first real test
-> is written from it.
+> **How this file is used.** Copy [the skeleton](#skeleton-to-copy) below for
+> every new unit test, and in the copy write the real name, code, and
+> command where each `‹…›` stands. Keep the pattern's rules. For `tally`, a unit test drives the package
+> `count` with a text and asserts the three counts.
 
 ## In plain terms
 
@@ -31,7 +31,7 @@ A unit test does not depend on another test's state or order. Where a real
 collaborator is genuinely needed, that is an
 [integration test](template-integration.md), not a unit test.
 
-## Fill-in skeleton
+## Skeleton to copy
 
 ```text
 test ‹name: the behaviour, in plain words, e.g. "rejects a negative amount"›:

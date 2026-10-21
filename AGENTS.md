@@ -1,7 +1,8 @@
 # AGENTS.md
 
-Agent context for **Armature**, the engineering-discipline kit. Read this before
-you change anything in this repository.
+Agent context for **`tally`**, the Go command that counts the lines, words and
+characters of text files, and for the engineering discipline its work follows.
+Read this before you change anything in this repository.
 
 This file is a startup index and summary of how we work here. Where it disagrees
 with a document it points to or summarises, **the document wins** — and the
@@ -10,14 +11,22 @@ disagreement is a defect to fix in the same change
 
 ## What this repository is
 
-A domain-free **template**, not a product application. Armature ships the "how we
+The repository `pharzam/layup-uat-m2e` holds the product `tally`: a command
+`tally [-l] [-w] [-c] [file...]`, written in Go with the standard library only and
+built with the Go toolchain, with a package `count` that counts the lines, the words
+and the characters of a reader, apart from the package `main` of the command. The
+[problem statement](docs/facts/problem-statement-brief.md) and the answers of
+[F-0001](docs/facts/F-0001-setup-answers.md) say what it must do. The
+repository started as a copy of the Armature baseline, pinned in
+[`docs/setup/armature.pin`](docs/setup/armature.pin). Armature ships the "how we
 work" — a quality gate, guardrails, decision records, a glossary, a
-facts-and-requirements convention, a test section and a task backlog — for an
-adopter to copy onto its own domain. It holds no product code and no product test
-suite, so there is nothing here to build, and no toolchain to install.
+facts-and-requirements convention, a test section and a task backlog — and this
+repository puts it to work on `tally`.
 
-Two things catch agents out: the `‹…›` markers are deliberate, and the root
-[`tests/`](tests/) directory is empty on purpose — it is the adopter's drop-in.
+Two things catch agents out: each `‹…›` marker that is left is a value no one has
+supplied yet, and it is deliberate; and the root [`tests/`](tests/) directory holds
+the end-to-end and acceptance tests of the command, while the unit tests of the
+package `count` sit next to its code, as Go expects.
 
 ## How these instructions rank
 
@@ -38,7 +47,25 @@ that gate assumes.
 human first door. Which document owns which class of rule is the table under
 Sources of truth, written once.
 
+## The product, in brief
+
+- `-l`, `-w` and `-c` select the lines, the words and the characters; they combine,
+  and the counts always come in that order. With no flag, all three.
+- A row is the selected counts, then the file name, each separated by one space;
+  the row for standard input has no name, and `-` is a file named `-`. With two
+  files or more, the last row is the total of the files counted without an error,
+  then `total`.
+- A file that cannot be read, a directory, or a file that is not valid UTF-8 gives a
+  message on standard error and no row, and the exit code is 1; the other files
+  are still counted. Wrong usage gives the exit code 2; otherwise the exit code is 0.
+- The targets: 10 MiB in at most 2 seconds, 1 GiB with at most 64 MiB of peak heap,
+  and at least 90 percent statement coverage of the package `count`.
+
+The vocabulary is in [`docs/glossary.md`](docs/glossary.md), and the traps of
+counting text in [`docs/guardrails.md`](docs/guardrails.md) §2.
+
 ## The quality gate
+
 
 Every substantive task passes **eight** ordered steps, in this order. Before step
 1, an issue is open, and the work is sliced into an ordered, Definition-of-Done
@@ -96,8 +123,11 @@ git diff --check
 
 [`docs/ci/pr-link-lint.sh`](docs/ci/pr-link-lint.sh) and
 [`docs/ci/review-record-lint.sh`](docs/ci/review-record-lint.sh) read forge
-artifacts, so they run in CI only and have no local run. Armature has no product test suite and no
-product toolchain: never invent a build, lint or test command for it.
+artifacts, so they run in CI only and have no local run. The product checks of
+`tally` use the Go toolchain: `go vet ./...`, `gofmt -l .` and `go test ./...`, and
+`go test -cover ./count` for the coverage target. Never invent another build, lint
+or test command; the targets and how each is measured are in
+[`docs/guardrails.md`](docs/guardrails.md).
 
 ## Branches, worktrees, commits, and pull requests
 
@@ -118,12 +148,13 @@ ones. Any detail belongs in that task's own file, never in either index. The sam
 pull request that lands the work records the line in the completed log, moving it
 from the backlog where the task had one.
 
-## Placeholders and adopter values
+## Placeholders and open values
 
-Every `‹…›` marker is a value only the adopter can supply — the test runner, the
-evidence store, the task-ID scheme, the worktree directory. Never replace one with
-a guess, never invent an adopter's command, path or number, and never delete a
-marker to make a check pass. Search for `‹` to find every one of them.
+Every `‹…›` marker that is left is a value only the operators of this project can
+supply — the evidence store, the task-ID scheme, the worktree directory. Never put a
+guess in its place, never invent a command, path or number of this project, and
+never delete a marker to make a check pass. Search for the opening angle quote,
+U+2039, to find every one of them.
 
 ## Safety limits
 
@@ -149,7 +180,7 @@ time, never directly. An architecturally significant decision becomes an
 | [`docs/issue-workflow.md`](docs/issue-workflow.md) | The numbered rules themselves, and the honest table of what a mechanism backs today. |
 | [`docs/guardrails.md`](docs/guardrails.md) | Known pitfalls, pre-registered pass and fail rules, and how a result is validated. |
 | [`docs/glossary.md`](docs/glossary.md) | The shared vocabulary, and the rule that every abbreviation earns an entry. |
-| [`docs/adr/`](docs/adr/) | Architecture decisions that constitute a project, with the context and the consequences of each one. This repository's own past governance decisions are archived under `docs/decisions/`, which an adopter deletes. |
+| [`docs/adr/`](docs/adr/) | Architecture decisions that constitute a project, with the context and the consequences of each one. The past governance decisions of the Armature baseline were archived under `docs/decisions/`, which this repository removed when it was set up. |
 | [`docs/tests/`](docs/tests/) | The test levels, a pattern for each, and the Definition-of-Done coverage checklist. |
 | [`docs/facts/`](docs/facts/) and [`docs/prd/`](docs/prd/) | Customer facts kept as evidence, and the requirements derived from them. |
 | [`.githooks/`](.githooks/) and [`docs/ci/`](docs/ci/) | What the gate enforces locally, and what CI enforces as the authority. |

@@ -6,8 +6,9 @@ for the full rationale.
 
 ## What belongs in this directory
 
-`docs/adr/` is the **living constitution** an adopter copies: it holds only
-records that constitute *a project*, generic enough to carry onto any domain. Two
+`docs/adr/` is the **living constitution** of `tally`: it holds only records that
+constitute *a project* — the records that came with the Armature baseline, generic
+enough to carry onto any domain, and the records this project adds. Two
 rules keep it that way, and both are **written rules** — no linter enforces them
 (`link-lint` checks that a link resolves, not which way it points; `adr-lint`
 reads only this directory), so the [plan review](../issue-workflow.md#r12--slice-and-prioritize)
@@ -18,21 +19,22 @@ are their enforcement:
    cites only sibling constitutive documents — another ADR, an
    [`engineering-discipline.md`](../engineering-discipline.md) section,
    [`issue-workflow.md`](../issue-workflow.md), the [`glossary`](../glossary.md), a
-   template. A forge number resolves to a different issue, or to nothing, in the
-   adopter's repository; a link to a sibling document travels with the copy.
+   template. A forge number resolves to a different issue, or to nothing, in a
+   repository that copies the record; a link to a sibling document travels with the copy.
 2. **A record here never links into `docs/decisions/`** (a bare textual mention is
-   the most it may make). That directory is this repository's own past governance
-   decisions — the records that shaped *the kit* rather than a project built with
-   it — kept as a **closed archive** an adopter deletes. A constitutional record
-   that linked into it would turn an adopter's tree red the moment they removed the
-   archive; that is why this very rule names the directory without linking it. (A
+   the most it may make). That directory held the past governance decisions of the
+   Armature baseline — the records that shaped *the baseline* rather than a project
+   built with it — kept as a **closed archive** that a project removes; this
+   repository removed it when it was set up. A constitutional record that linked
+   into it would turn the tree red the moment the archive was removed; that is why
+   this very rule names the directory without linking it. (A
    record inside `docs/decisions/` *may* link up to a record here — that direction
    survives the deletion.)
 
 **Numbering.** `docs/adr/` is the single living ADR sequence, numbered
-contiguously from `0001`, and it grows — the next constitutional ADR is `0009`. A
-bare "ADR-NNNN" means this directory's sequence. The archive under `docs/decisions/`
-has its **own namespace**: a prefixed, zero-based sequence `D-0000`–`D-0007` that
+contiguously from `0001`, and it grows — the next constitutional ADR is `0010`. A
+bare "ADR-NNNN" means this directory's sequence. The baseline's archive under `docs/decisions/`
+had its **own namespace**: a prefixed, zero-based sequence `D-0000`–`D-0007` that
 shares no number with this one and is cited **by its `D-NNNN` identifier** — named
 here without a link, since a constitutional record never links into the archive.
 
@@ -40,9 +42,9 @@ here without a link, since a constitutional record never links into the archive.
 
 1. Copy [`template.md`](template.md) to `NNNN-short-title.md`, using the next
    sequential number.
-2. Fill in Context, Decision, and Consequences. Set Status to `Proposed` if it
+2. Write the Context, the Decision, and the Consequences. Set Status to `Proposed` if it
    still needs sign-off, or `Accepted` if it is already decided.
-3. If this decision **replaces** an earlier one, set the old ADR's status to
+3. If this decision **supersedes** an earlier one, set the old ADR's status to
    `Superseded by ADR-NNNN` and link to the new one.
 4. If it **extends** an earlier one — the old decision still holds, but this adds
    to it — set the old ADR's status to `Accepted. Amended by ADR-NNNN` instead.
@@ -60,8 +62,8 @@ the conventions above — filename shape, contiguous numbering, the title line, 
 cross-link is a warning). It reads only Markdown, so `sh docs/adr/adr-lint.sh`
 runs anywhere, and it is wired into the
 [`pre-commit` hook](../engineering-discipline.md#git-hooks) and
-[CI](../engineering-discipline.md#continuous-integration-optional). If you change
-this template's shape, change the linter in the same change — the two must agree.
+[CI](../engineering-discipline.md#continuous-integration). If you change
+the shape of the record form, change the linter in the same change — the two must agree.
 
 ### What counts as an inbound cross-link
 
@@ -70,7 +72,7 @@ filename — inline
 `[text](…/0001-….md)`, a reference definition `[label]: …/0001-….md`, or a raw
 `href` — carried by a Markdown file the check reads. It reads every `.md` under
 this directory's **parent** except this directory itself, plus the `README.md`
-beside that parent. In this kit those are [`docs/`](..) and the repository-root
+beside that parent. In this repository those are [`docs/`](..) and the repository-root
 [`README.md`](../../README.md), so a file elsewhere in the tree — the root
 `AGENTS.md` included — is outside its reach. Move the ADR directory and the reach
 moves with it, which is the last of the limits listed in the script.
@@ -139,6 +141,7 @@ record by number here, and let the index table below do the linking.
 
 <!-- Add one row per ADR as you write them. Keep the newest at the bottom. -->
 
-This repository's own past governance decisions — the archive's `D-0000`–`D-0007`
-sequence — are archived under `docs/decisions/`; see the index there. They are not
-part of the constitution an adopter adopts.
+The past governance decisions of the Armature baseline — the archive's
+`D-0000`–`D-0007` sequence — were archived under `docs/decisions/`, which this
+repository removed when it was set up. They are not part of the constitution of
+`tally`.

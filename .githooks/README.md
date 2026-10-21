@@ -29,11 +29,11 @@ to run when the resolved path lies outside the tree being committed to; see
 
 ## What each hook does
 
-| Hook | Runs | Adapt? |
+| Hook | Runs | Work for this project |
 |------|------|--------|
-| [`pre-commit`](pre-commit) | A provenance check on where the hooks came from, then the ADR, PRD and link linters and the discipline self-tests, then your `‹lint›` / test levels (fast subset) / security checks (fast subset). | Fill the `‹…›` steps for your stack. |
+| [`pre-commit`](pre-commit) | A provenance check on where the hooks came from, then the ADR, PRD and link linters and the discipline self-tests, then the `‹lint›` / test levels (fast subset) / security checks (fast subset) of `tally`. | Write the `‹…›` steps for Go: `go vet` and `gofmt`, `go test -short`, and a fast security scan. |
 | [`commit-msg`](commit-msg) | Conventional-Commits check on the subject line. | Ready as-is. |
-| [`pre-push`](pre-push) | Refuses a direct push to `main` — use a branch and a PR instead. | Change the branch name if your default is not `main`. |
+| [`pre-push`](pre-push) | Refuses a direct push to `main` — use a branch and a PR instead. | Ready as-is: the default branch of this repository is `main`. |
 
 ## Protecting `main`
 
@@ -45,18 +45,18 @@ until `core.hooksPath` is set. The real, unbypassable lock is your host's
 server-side. Turn that on for every repo; this hook is its local twin, not a
 substitute.
 
-## How to adapt
+## Setting the steps of tally
 
-1. Open [`pre-commit`](pre-commit) and replace each `‹…›` with your project's
-   command, then uncomment that line. Delete any step you do not use. Keep the
+1. Open [`pre-commit`](pre-commit) and write the Go command of this project in place
+   of each `‹…›`, then uncomment that line. Delete any step `tally` does not need. Keep the
    steps cheap-first and fast — the full test suite belongs in CI.
 2. [`commit-msg`](commit-msg) is ready to use; widen its type list only if you
    first agree the new type in
    [§"Commit messages"](../docs/engineering-discipline.md#commit-messages).
 
-## Optional: the `pre-commit` framework
+## An alternative: the `pre-commit` framework
 
 For a richer setup — pinned, shared, auto-updating hooks across languages — adopt
 the [`pre-commit`](https://pre-commit.com) framework and drive it from a
-`.pre-commit-config.yaml`. It replaces these shell hooks; keep one approach, not
+`.pre-commit-config.yaml`. It takes the place of these shell hooks; keep one approach, not
 both. The plain hooks here are the dependency-free default.

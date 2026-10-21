@@ -3,16 +3,15 @@
 The fixed ladder of test kinds this project uses, from the cheapest and most
 local to the most expensive and most whole-system. It is the reference the rest
 of the [test section](README.md) points at: every template and checklist here
-names one of these levels. This document is domain-free — it defines the levels
-and where they run, and leaves every concrete command as a `‹…›` placeholder for
-the adopter to fill.
+names one of these levels. The level definitions came from the baseline, which
+names no domain — it defines the levels and where they run, and leaves every
+concrete command as a `‹…›` placeholder, to be set for `tally`.
 
-> **How to adapt this file.** The level *definitions* are the reusable content —
-> keep them. Replace each `‹…›` placeholder with your stack's real command, and
-> delete a level you genuinely do not use (most projects use all four). Do not
-> name a language, framework, or runner here; the command placeholders are the
-> only place a tool name belongs, and only once you fill them in your own copy.
-> Delete this note once your commands are in.
+> **How this file is kept.** The level *definitions* are the reusable content —
+> keep them. Each `‹…›` placeholder takes the real command of `tally`, and a level
+> `tally` genuinely does not need is deleted (most projects use all four). Do not
+> name a language, framework, or runner in the definitions; the command
+> placeholders are the only place a tool name belongs, once each is set.
 
 ## In plain terms
 
@@ -26,7 +25,7 @@ the adopter to fill.
 The levels are ordered so a failure stops the expensive work early. A change runs
 the cheap levels in the [commit hook](../engineering-discipline.md#git-hooks) for
 fast local feedback, and the whole ladder in
-[CI](../engineering-discipline.md#continuous-integration-optional) as the
+[CI](../engineering-discipline.md#continuous-integration) as the
 authority.
 
 | Level | Proves | Scope | Speed | Runs in |
@@ -90,7 +89,7 @@ a person, not asserted by a command, so it is not a rung of the automated ladder
 
 A discipline test lints the **process rather than the product**: it checks the
 repo's own conventions and needs no product toolchain, so it can be the project's
-first test, before any product code exists. The kit ships five:
+first test, before any product code exists. The repository ships five:
 [`adr-lint.sh`](../adr/adr-lint.sh), [`prd-lint.sh`](../prd/prd-lint.sh) and
 [`link-lint.sh`](../links/link-lint.sh)
 read repo files and run in
@@ -121,7 +120,7 @@ have their own command placeholder and their own checklist:
 
 ## The placeholders this section uses
 
-Fill these once, in your own copy, and every template here inherits them:
+Set these once, in this file, and every pattern here inherits them:
 
 | Placeholder | Meaning |
 |-------------|---------|
@@ -130,5 +129,5 @@ Fill these once, in your own copy, and every template here inherits them:
 | `‹end-to-end test command›` | Run the E2E level. |
 | `‹security test command›` | Run the security scan step. |
 | `‹test timeout›` | The per-test (or per-suite) time limit before a hang is a failure. |
-| `‹test directory›` | Where product tests live — the root [`tests/`](../../tests/) drop-in, or your stack's convention. |
+| `‹test directory›` | Where product tests live — the root [`tests/`](../../tests/) directory for the end-to-end tests of `tally`, and beside the code of the package `count` for its unit tests, as Go expects. |
 | `‹security scanner›` | The tool that runs the security checks (secret scan, dependency scan, static analysis). |

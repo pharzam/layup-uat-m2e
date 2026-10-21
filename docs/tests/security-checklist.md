@@ -6,12 +6,14 @@ security track described in
 [`test-levels.md`](test-levels.md#security-tests-sit-alongside-the-ladder) — a
 parallel track to the test ladder, not a rung on it.
 
-> **How to adapt this file.** Fill `‹security scanner›` and
-> `‹security test command›` with your stack's real tool and command everywhere
+> **How this file is kept.** Set `‹security scanner›` and
+> `‹security test command›` to the real Go tool and command of `tally` (for
+> example `govulncheck ./...`) everywhere
 > they appear here — [`test-levels.md`](test-levels.md) is the one place they are
 > defined, and this file inherits them. Add a project-specific check to
 > [the table](#the-minimum-checks) or [Add your own](#add-your-own) for anything
-> this minimum list does not cover. Delete this note once your checks are in.
+> this minimum list does not cover. `tally` reads local files and opens no network
+> connection, so the dependency scan and the secret scan carry most of the weight.
 
 ## In plain terms
 
@@ -44,7 +46,7 @@ security checks are wired into two layers, cheap-first:
   in [CI](../ci/), as the authority.
 
 `‹security scanner›` names the tool both layers drive. Both are inert until the
-`‹…›` steps are filled for your stack.
+`‹…›` steps are written for Go.
 
 ## A pre-registered bar
 
@@ -63,7 +65,7 @@ in the guardrails.
 
 ## Add your own
 
-This is a minimum, not a ceiling. Add a row for any other weakness class your
-project needs checked — for example a licence scan, a container-image scan, or
+This is a minimum, not a ceiling. Add a row for any other weakness class `tally`
+needs checked — for example a licence scan, a container-image scan, or
 an infrastructure-as-code scan — as its own `‹…›` check, tool, and pass
 condition.
