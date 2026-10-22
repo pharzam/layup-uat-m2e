@@ -13,3 +13,4 @@ n	kind	attempt	session	base	sha	detail	time
 12	session	3	S-0ef59a25	—	—	—	2026-10-22T11:34:49Z
 13	result	3	S-0ef59a25	—	—	done	2026-10-22T11:36:28Z
 14	handoff	3	S-0ef59a25	—	—	invalid verdict-field comment 6339776504-1	2026-10-22T11:36:36Z
+15	handoff	3	S-0ef59a25	—	—	valid comment 6339776504-1	2026-10-22T14:11:29Z
