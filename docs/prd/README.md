@@ -14,7 +14,8 @@ a requirement back to the customer's exact words.
 > [F-0001](../facts/F-0001-setup-answers.md). `tally` has an external customer and
 > requirements to trace, so this directory stays, with the `prd-lint` steps in the
 > [hooks](../../.githooks/pre-commit) and [CI](../ci/); a project with neither could
-> remove it, since nothing else depends on it. No PRD is written yet.
+> remove it, since nothing else depends on it. The first is
+[PRD-0001](PRD-0001-tally.md).
 
 ## Adding a new PRD
 
@@ -70,6 +71,7 @@ checks to its `go test`.
 
 | PRD | Title | Status |
 | --- | ----- | ------ |
+| PRD-0001 | [tally](PRD-0001-tally.md) | Draft |
 
 <!-- Add one row per PRD as you write it (newest at the bottom), for example:
      | PRD-0001 | Short title | Accepted | -->
