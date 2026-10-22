@@ -1,0 +1,6 @@
+kind	n	value	sha256	reason
+status	1	completed	—	PRD-0001, docs/spec and the task file written per the step spec; Won't rows and matrix guardrail/task links added per the last findings; MoSCoW, Phase and F-0003 left to the bet as the spec requires
+artifact	1	docs/tasks/T-ut9g.md	5c6a888424774c22ff06bde1e4c5c1b1715ef5b0f04f7f5d4f5a9af766a9d9b9	—
+artifact	2	docs/prd/PRD-0001-tally.md	af6a4298d72a63a1794978cb90a8c39fafa38283a222313984f310a6751d04e9	—
+artifact	3	docs/prd/README.md	fc5cce2b0b927897567c9a0a2c0142a60f57e6ff165be2e9ed60108a6f39f506	—
+artifact	4	docs/spec/tally.md	86c6ba2cf4f0e664ee7ee53c3696e8c243de8dd3c366987005694bb76ce4a4a2	—
