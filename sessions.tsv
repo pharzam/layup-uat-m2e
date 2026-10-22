@@ -23,3 +23,4 @@ S-ce86366e	T-ut9g	4	qa-engineer	codex	codex-cli 0.163.0	gpt-6.1-sol	46bac1aaed49
 S-70f45a11	T-ut9g	4	product-owner	claude	2.1.306 (Claude Code)	claude-opus-5-5	46bac1aaed4937070f99b9ef8aa27a18190089a1	a2667c81633da6ed9ae9de5c1c36643a18a1b99f	17975	4494	1000000	5.00	30	ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-sonnet-5-5	—
 S-3ed38e9c	T-ut9g	4	qa-engineer	codex	codex-cli 0.163.0	gpt-6.1-sol	7f5f9731c83b86d5b9e924e321e83257c513a163	5188c8cda73ea6b91828c76e7586804c50edf1a7	16897	4225	1050000	—	30	—	—
 S-b476d863	T-ut9g	5	product-owner	claude	2.1.306 (Claude Code)	claude-opus-5-5	46bac1aaed4937070f99b9ef8aa27a18190089a1	a0498915d0a207f3f85955194fa5b6ad20c7430f	19865	4967	1000000	5.00	30	ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-sonnet-5-5	—
+S-967fb783	T-ut9g	5	qa-engineer	codex	codex-cli 0.163.0	gpt-6.1-sol	19ace65c576f7d04c6b676530d615bf62a9874b4	794935a198b6950950dbd8a575cb094d62309030	17029	4258	1050000	—	30	—	—
