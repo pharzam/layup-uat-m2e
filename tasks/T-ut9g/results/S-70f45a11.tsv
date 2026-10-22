@@ -1,0 +1,6 @@
+kind	n	value	sha256	reason
+status	1	completed	—	PRD-0001, the specification and the task file of T-ut9g are written and committed; MoSCoW and Phase are left empty for the bet
+artifact	1	docs/tasks/T-ut9g.md	801765b9e0cec84562d2c6b53f0b0796210f005af6675244630a1a1e46d13aa7	—
+artifact	2	docs/prd/PRD-0001-tally.md	381d9c53316beb8fa7a958cc18e82b815ac359abf87b7a2c49242563b7163b4d	—
+artifact	3	docs/prd/README.md	125cbe4f4f00e987a404afeaf997a8d665f17cd4d0905fc7d8de92e54f2e7fde	—
+artifact	4	docs/spec/tally.md	ec70ccf03355e4804658b0d01ef37b82f31b5f13fd77e3d7f80bd839d8ded30c	—
