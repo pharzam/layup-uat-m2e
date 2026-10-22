@@ -15,3 +15,4 @@ n	kind	attempt	session	base	sha	detail	time
 14	handoff	3	S-0ef59a25	—	—	invalid verdict-field comment 6339776504-1	2026-10-22T11:36:36Z
 15	handoff	3	S-0ef59a25	—	—	valid comment 6339776504-1	2026-10-22T14:11:29Z
 16	attempt	4	—	46bac1aaed4937070f99b9ef8aa27a18190089a1	—	—	2026-10-22T14:11:31Z
+17	session	4	S-fdcba991	—	—	—	2026-10-22T14:11:34Z
