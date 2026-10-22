@@ -1,0 +1,3 @@
+kind	n	value	sha256	reason
+comment	1	result/plan.md	b677bc36f85dbcea9ab141224bf474846ff6f4c26d512511010c22ef6c5d3d39	—
+status	1	completed	—	The revised plan of T-ut9g answers each finding of the rejected plan and is written to result/plan.md
