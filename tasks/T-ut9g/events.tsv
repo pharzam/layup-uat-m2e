@@ -26,3 +26,4 @@ n	kind	attempt	session	base	sha	detail	time
 25	push	4	S-70f45a11	—	7f5f9731c83b86d5b9e924e321e83257c513a163	task/T-ut9g/4	2026-10-22T14:21:08Z
 26	bound	4	S-70f45a11	—	7f5f9731c83b86d5b9e924e321e83257c513a163	task/T-ut9g/4	2026-10-22T14:21:11Z
 27	handoff	4	S-70f45a11	—	—	valid	2026-10-22T14:21:15Z
+28	session	4	S-3ed38e9c	—	—	—	2026-10-22T14:21:37Z
