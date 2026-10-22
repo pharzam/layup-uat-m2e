@@ -9,3 +9,4 @@ n	kind	attempt	session	base	sha	detail	time
 8	session	2	S-141cc16c	—	—	—	2026-10-22T09:57:09Z
 9	result	2	S-141cc16c	—	—	done	2026-10-22T10:00:12Z
 10	refused	2	S-141cc16c	—	—	artifact	2026-10-22T10:00:12Z
+11	attempt	3	—	46bac1aaed4937070f99b9ef8aa27a18190089a1	—	—	2026-10-22T11:34:47Z
