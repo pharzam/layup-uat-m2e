@@ -1,0 +1,4 @@
+kind	n	value	sha256	reason
+status	1	completed	—	Plan review completed; the supplied plan is rejected with reasons.
+comment	1	result/plan-review.md	fb81da36640c07e90615ca1d5a3eaccd4c8f3c6c643f2da9379d164309299852	—
+artifact	1	result/plan-review.md	fb81da36640c07e90615ca1d5a3eaccd4c8f3c6c643f2da9379d164309299852	—
