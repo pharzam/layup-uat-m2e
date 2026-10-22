@@ -16,3 +16,4 @@ S-38761f1c	T-rv82	1	probe	claude	2.1.306 (Claude Code)	claude-sonnet-5-5	46bac1a
 S-c1494831	T-rjbk	1	systems-architect	claude	2.1.306 (Claude Code)	claude-opus-5-5	46bac1aaed4937070f99b9ef8aa27a18190089a1	dc9c09146018e80c704fd514059f670785416f7f	2997	750	1000000	5.00	30	ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-sonnet-5-5	—
 S-fb051a4c	T-ut9g	1	software-engineer	claude	2.1.306 (Claude Code)	claude-opus-5-5	46bac1aaed4937070f99b9ef8aa27a18190089a1	a292fac203c7011391322d57b9b9f98f1673ccbb	15658	3915	1000000	5.00	30	ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-sonnet-5-5	—
 S-38157561	T-ut9g	1	qa-engineer	codex	codex-cli 0.163.0	gpt-6.1-sol	46bac1aaed4937070f99b9ef8aa27a18190089a1	ac6203567fe3b2bc5d810990322026fd6c93a7b0	15652	3913	1050000	—	30	—	—
+S-141cc16c	T-ut9g	2	qa-engineer	codex	codex-cli 0.163.0	gpt-6.1-sol	46bac1aaed4937070f99b9ef8aa27a18190089a1	ac5d4f5493fb997ad0991bfc4cfe5bd5612a7133	15652	3913	1050000	—	30	—	—
