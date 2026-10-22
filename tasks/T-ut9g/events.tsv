@@ -37,3 +37,4 @@ n	kind	attempt	session	base	sha	detail	time
 36	handoff	5	S-b476d863	—	—	valid	2026-10-22T14:27:33Z
 37	session	5	S-967fb783	—	—	—	2026-10-22T14:27:55Z
 38	result	5	S-967fb783	—	—	done	2026-10-22T14:29:12Z
+39	handoff	5	S-967fb783	—	—	valid comment 6343254235-1	2026-10-22T14:29:23Z
